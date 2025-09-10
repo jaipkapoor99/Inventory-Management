@@ -23,7 +23,7 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     git clone <repository-url>
-    cd diff-apps
+    cd PNPM-Demo
     ```
 
 2. **Install dependencies:**

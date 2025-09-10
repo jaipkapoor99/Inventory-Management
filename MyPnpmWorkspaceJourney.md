@@ -4,7 +4,7 @@ This document outlines my experience in establishing a monorepository structure 
 
 ## Why pnpm Workspaces?
 
-Prior to detailing the implementation process, it is beneficial to understand the rationale behind adopting this approach. For projects such as "Inventory-Management," which encompasses distinct components like an administrative application, a user-facing application, and a shared user interface library, a monorepository structure presented itself as a highly advantageous architectural choice. The selection of pnpm as the package manager for this setup was driven by several key benefits:
+Prior to detailing the implementation process, it is beneficial to understand the rationale behind adopting this approach. For projects such as "PNPM-Demo," which encompasses distinct components like an administrative application, a user-facing application, and a shared user interface library, a monorepository structure presented itself as a highly advantageous architectural choice. The selection of pnpm as the package manager for this setup was driven by several key benefits:
 
 1. **Efficient Dependency Management:** pnpm significantly optimizes dependency handling. Instead of duplicating `node_modules` directories across every package, pnpm employs a content-addressable store to create links to dependencies. This methodology results in notably faster installation times, reduced disk space consumption, and a more organized project directory.
 2. **Enhanced Strictness:** In contrast to other package managers, pnpm enforces stricter rules regarding dependency access. This characteristic helps mitigate the occurrence of "phantom dependencies"—situations where a package implicitly relies on a dependency of another package without explicitly declaring it. This leads to more robust and predictable build processes.
@@ -12,10 +12,10 @@ Prior to detailing the implementation process, it is beneficial to understand th
 
 ## My Monorepo Structure
 
-In my "Inventory-Management" project, the organizational structure is as follows:
+In my "PNPM-Demo" project, the organizational structure is as follows:
 
 ```txt
-Inventory-Management/
+PNPM-Demo/
 ├── packages/
 │   ├── admin-app/
 │   ├── user-app/
@@ -31,7 +31,7 @@ Each directory located within `packages/` functions as an independent pnpm packa
 Upon establishing your workspace, pnpm provides a suite of valuable utilities for effective management:
 
 *   **`pnpm install`**: Executing this command from the monorepo root will install all dependencies for every package and establish links for local packages. This process is notably efficient.
-*   **`pnpm -r <command>`**: This command is exceptionally useful for executing a specified command across all packages within your monorepo. For example, `pnpm -r build` will initiate the build process for every package. This capability proved invaluable for my "Inventory-Management" project, enabling the simultaneous building of all applications and the `common-ui` library with a single command.
+*   **`pnpm -r <command>`**: This command is exceptionally useful for executing a specified command across all packages within your monorepo. For example, `pnpm -r build` will initiate the build process for every package. This capability proved invaluable for my "PNPM-Demo" project, enabling the simultaneous building of all applications and the `common-ui` library with a single command.
 *   **`pnpm run <script-name>`**: You can define scripts within your root `package.json` that can, in turn, execute scripts located in individual packages. For example, I have configured `dev:user` and `dev:admin` scripts to launch the development servers for their respective applications.
 
 ## A Minor Challenge (and its Resolution)

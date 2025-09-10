@@ -16,8 +16,8 @@ Before you start, ensure you have:
 Create a new directory for your monorepo and initialize a `package.json` file. This `package.json` will typically be minimal, as project-specific dependencies will reside in their respective package directories.
 
 ```bash
-mkdir my-monorepo
-cd my-monorepo
+mkdir PNPM-Demo
+cd PNPM-Demo
 pnpm init
 ```
 
@@ -116,7 +116,7 @@ pnpm will automatically determine the correct order for building packages based 
 ## Example Workspace Structure
 
 ```txt
-my-monorepo/
+PNPM-Demo/
 ├── package.json
 ├── pnpm-workspace.yaml
 ├── node_modules/ # Hoisted dependencies
