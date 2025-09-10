@@ -1,4 +1,4 @@
-# Inventory Management Monorepo
+# PNPM-Demo Monorepo
 
 This project is a monorepo containing multiple applications and a shared UI library, managed with pnpm workspaces.
 
