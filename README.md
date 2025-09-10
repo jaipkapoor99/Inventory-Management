@@ -1,4 +1,4 @@
-# Diff Apps Monorepo
+# Inventory Management Monorepo
 
 This project is a monorepo containing multiple applications and a shared UI library, managed with pnpm workspaces.
 
